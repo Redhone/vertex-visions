@@ -1,0 +1,484 @@
+:root{
+   --main-bg:#1E1E1E;
+   --pri-text:#E0E0E0;
+   --sec-text: #B0B0B0;
+   --accent : #4A90E2;
+   --btns : #50E3C2;
+   --th-color:#333333;
+}
+::-webkit-scrollbar {
+   width: 10px;
+ }
+ 
+ /* Track */
+ ::-webkit-scrollbar-track {
+   background: var(--main-bg); 
+ }
+  
+ /* Handle */
+ ::-webkit-scrollbar-thumb {
+   background: var(--pri-text); 
+ }
+ 
+ /* Handle on hover */
+ ::-webkit-scrollbar-thumb:hover {
+   background: var(--sec-text); 
+ }
+*{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body{
+   background-color: var(--main-bg);
+   color: var(--pri-text);
+}
+/* section{
+   border: solid 2px var(--sec-text);
+} */
+/* styling our navigation */
+.nav-menu {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 1rem;
+   background-color: #333;
+   color: #fff;
+   position: fixed;
+   width: 100%;
+   z-index: 10;
+ }
+ 
+ .logo {
+   font-size: 1.2rem;
+   font-weight: bold;
+   text-transform: uppercase;
+   position: absolute;
+   left: 1rem;
+ }
+ .logo a{
+   text-decoration: none;
+   color: var(--pri-text);
+ }
+ 
+ .nav-toggle {
+   display: none;
+   font-size: 1.5rem;
+   background: none;
+   border: none;
+   color: #fff;
+   cursor: pointer;
+ }
+ 
+ .nav-links {
+   list-style: none;
+   display: flex;
+   margin: 0;
+   padding: 0;
+   transition: 300ms;
+ }
+ 
+ .nav-item {
+   margin: 0 1rem;
+   position: relative;
+ }
+ .current-link{
+   position: absolute;
+   height: 4px;
+   width: 4rem;
+   top: 1.5rem;
+   background-color: white;
+ }
+ 
+ .nav-item a {
+   color: #fff;
+   text-decoration: none;
+ }
+ 
+/* styling the about section */
+#about{
+   padding: 5rem 2.5rem;
+}
+
+.info{
+   padding: 2rem;
+   align-content: center;
+   max-width: 500px;
+}
+.info h1 {
+   font-size: 2rem;
+}
+.info p {
+   font-size: 1rem;
+}
+
+.my-btn{
+   text-decoration: none;
+   color: var(--accent);
+   border: solid 2px var(--accent);
+   padding: .5rem;
+   text-align: center;
+   transition: 200ms;
+}
+.my-btn:hover{
+   background-color: var(--accent);
+   color: var(--main-bg);
+
+}
+.my-btn-white{
+   text-decoration: none;
+   color: var(--pri-text);
+   border: solid 2px var(--pri-text);
+   padding: .5rem;
+   text-align: center;
+   font-weight: bold;
+   transition: 200ms;
+}
+.my-btn-white:hover{
+   color: var(--main-bg);
+   background: var(--pri-text);
+}
+.profil{
+   align-content: center;
+   position: relative;
+   transition: 200ms;
+}
+.profil img{
+   height: 500px;
+   max-width: 500px;
+   object-fit: cover;
+   transition: 500ms;
+
+}
+.profil:hover img{
+   filter: brightness(0.75);
+}
+.media{
+   text-align: center;
+   margin: 3rem auto;
+   position: absolute;
+   top:40%;
+   left: 10%;
+}
+.media ul{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 1.2rem;
+}
+.media li{
+   list-style: none;
+}
+.media a{
+   text-decoration: none;
+   color: var(--btns);
+   border: solid 2px var(--btns);
+   padding: .5rem;
+   transition: 200ms;
+}
+
+.media a:hover{
+   background: var(--btns);
+   color: var(--main-bg);
+}
+/* styling projects */
+#projects{
+   padding: 3rem;
+   display: grid;
+   grid-template-columns: repeat(6,1fr);
+   grid-template-rows: repeat(6,1fr);
+   grid-gap: 2rem;
+   height: 150vh;
+}
+
+.project-card{
+   border: 2px solid var(--accent);
+   margin: .5rem;
+   padding: 1rem;
+   text-align: center;
+   cursor: pointer;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+   align-items: center;
+   grid-column: span 3;
+   padding: 3rem;
+   height: 12rem;
+}
+.project-card h4{
+   font-size: 2rem;
+   text-transform: uppercase;
+}
+.project-card img{
+   width: 400px;
+   height: 375px;
+   object-fit: cover;
+}
+.project-card p{
+   text-align: center;
+}
+.project-card .content{
+   display: none;
+}
+.project-card.active .content {
+   display: block;
+}
+.project-card.active {
+   grid-column: 1 / span 4;
+   grid-row:1;
+   order:0;
+   height: auto;
+}
+.project-card.is-inactive{
+   grid-column : span 1;
+}
+
+/* styling contact form and map */
+/* General container styles */
+.form {
+   max-width: 600px;
+   margin: 0 auto;
+   padding: 20px;
+   background-color:none;
+}
+
+.form h4 {
+   text-align: center;
+   color: var(--pri-text);
+}
+
+form {
+   display: flex;
+   flex-direction: column;
+}
+
+label {
+   font-weight: 500;
+   color:var(--sec-text);
+   margin-bottom: .25rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+   width: 100%;
+   padding: 10px;
+   margin-bottom: .2rem;
+   border: none;
+   border-left: 3px solid var(--accent);
+   font-size: 16px;
+   background:none;
+   color:var(--pri-text);
+   transition: 500ms;
+}
+
+textarea {
+   resize: vertical;
+}
+/* Remove the focus outline and box shadow */
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: none;
+    background-color: var(--th-color);
+}
+
+.send-btn{
+   text-decoration: none;
+   color: var(--accent);
+   border: solid 2px var(--accent);
+   padding: .5rem;
+   text-align: center;
+   background: none;
+   transition: 200ms;
+}
+.send-btn:hover{
+   background-color: var(--accent);
+   color: var(--main-bg);
+}
+
+.map iframe{
+   width: 100%;
+   height: 100%;
+   filter: invert(2) grayscale(2);
+}
+/* project details */
+#detailed{
+   display: flex;
+   align-content: center;
+
+}
+#our-model{
+      width: 100%;
+      height: 600px;
+      z-index: 0;
+      transition: 300ms;
+}
+#our-model:hover{
+   box-shadow: 0 26px 58px 0 rgba(0, 0, 0, 0.22),
+   0 5px 14px 0 rgba(0, 0, 0, 0.18)
+}
+.project-detail{
+   height: 100%;
+   align-content: center;
+   padding: 2rem;
+
+}
+.terminal{
+   align-content: center;
+}
+.exit{
+   position: absolute;
+   top: 20%;
+   padding: .5rem;
+   background: none;
+   color: var(--pri-text);
+   font-size: 1.35rem;
+   border: none;
+}
+.terminal h3{
+   font-weight: bold;
+}
+.terminal p{
+   font-weight: bold;
+}
+.hidden{
+   display: none;
+}
+
+/* styling the footer */
+footer{
+   align-content: center;
+   text-align: center;
+   padding: 3rem;
+}
+
+/* additional media queries */
+@media screen and (max-width:992px) {
+   .nav-links {
+      display: none;
+      flex-direction: column;
+      margin-left: 40%;
+      width: 100%;
+    }
+    
+    .nav-links.activated {
+      display: flex;
+    }
+  
+    .nav-toggle {
+      display: block;
+      position: absolute;
+      top: .5rem;
+      left: 1rem;
+    }
+    .nav-item{
+      margin-bottom: 1rem;
+    }
+   .info{
+      text-align: center;
+   }
+   .map iframe{
+      height: 400px;
+   }
+
+   #projects{
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: repeat(3,1fr);
+      grid-gap: 2rem;
+      height: 200vh;
+   }
+   
+   .project-card{
+      border: 2px solid var(--accent);
+      margin: .5rem;
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      grid-column: span 3;
+      padding: 3rem;
+      height: 12rem;
+   }
+   .project-card h4{
+      font-size: 1.5rem;
+      text-transform: uppercase;
+   }
+   .project-card img{
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+   }
+   .project-card p{
+      text-align: center;
+      font-size: .8rem;
+   }
+   .project-card .content{
+      display: none;
+   }
+   .project-card.active .content {
+      display: block;
+   }
+   .project-card.active {
+      grid-column: 1 / span 3;
+      grid-row:2;
+      order:0;
+      height: auto;
+   }
+   .project-card.is-inactive{
+      grid-column : span 3;
+   }
+
+#detailed{
+   display: flex;
+   align-content: center;
+
+}
+#our-model{
+      width: 100%;
+      height: 500px;
+      z-index: 0;
+      transition: 200ms;
+}
+.project-detail{
+   height: 50%;
+   width: 90%;
+   align-content: center;
+   padding: 2rem;
+   text-align: center;
+
+}
+.terminal{
+   align-content: center;
+}
+.exit{
+   position: absolute;
+   top: 20%;
+   padding: .5rem;
+   background: none;
+   color: var(--pri-text);
+   font-size: 1.35rem;
+   border: none;
+}
+.terminal h3{
+   font-weight: bold;
+}
+.terminal p{
+   font-weight: 500;
+   font-size: .9rem;
+}
+.hidden{
+   display: none;
+}
+
+   
+}
