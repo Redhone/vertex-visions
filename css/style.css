@@ -124,7 +124,7 @@ body{
 .my-btn:hover{
    background-color: var(--accent);
    color: var(--main-bg);
-
+   
 }
 .my-btn-white{
    text-decoration: none;
@@ -149,6 +149,9 @@ body{
    max-width: 500px;
    object-fit: cover;
    transition: 500ms;
+   border-bottom-right-radius: 5rem;
+   border-bottom-left-radius: 5rem;
+   border-top-right-radius: 5rem;
 
 }
 .profil:hover img{
@@ -159,7 +162,7 @@ body{
    margin: 3rem auto;
    position: absolute;
    top:40%;
-   left: 10%;
+   left: 7%;
 }
 .media ul{
    display: flex;
@@ -213,8 +216,9 @@ body{
 }
 .project-card img{
    width: 400px;
-   height: 375px;
+   height: 350px;
    object-fit: cover;
+   margin-bottom: 1.5rem;
 }
 .project-card p{
    text-align: center;
@@ -381,6 +385,19 @@ footer{
    .info{
       text-align: center;
    }
+   .info p{
+      font-size: .8rem;
+   }
+   .profil img{
+      max-width: 300px;
+      height: 400px;
+   }
+   .media ul{
+      gap:1rem;
+   }
+   .media a{
+      padding: .3rem;
+   }
    .map iframe{
       height: 400px;
    }
@@ -391,7 +408,7 @@ footer{
       grid-template-columns: repeat(3,1fr);
       grid-template-rows: repeat(3,1fr);
       grid-gap: 2rem;
-      height: 200vh;
+      height: 230vh;
    }
    
    .project-card{
@@ -410,17 +427,17 @@ footer{
       height: 12rem;
    }
    .project-card h4{
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       text-transform: uppercase;
    }
    .project-card img{
-      width: 300px;
-      height: 300px;
+      width: 200px;
+      height: 200px;
       object-fit: cover;
    }
    .project-card p{
       text-align: center;
-      font-size: .8rem;
+      font-size: .6rem;
    }
    .project-card .content{
       display: none;
@@ -479,6 +496,8 @@ footer{
 .hidden{
    display: none;
 }
-
+footer{
+   font-size: .8rem;
+}
    
 }
